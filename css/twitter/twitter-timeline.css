@@ -3,7 +3,7 @@
 	width: 300px;
 	position: absolute;
 	left: 25%;
-	top: 5%;
+	top: 10%;
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -31,7 +31,7 @@
 	width: 400px;
 	position: absolute;
 	left: 50%;
-	top: 5%;
+	top: 10%;
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -52,4 +52,28 @@
 	padding-left: 0;
 	padding-right: 0;
 	color: white;
+}
+
+.tweet-button {
+	position: absolute;
+	left: 28%;
+	top: 6%;
+}
+
+.follow-button {
+	position: absolute;
+	left: 34%;
+	top: 6%;
+}
+
+.mention-button {
+	position: absolute;
+	left: 49%;
+	top: 6%;
+}
+
+.hashtag-button {
+	position: absolute;
+	left: 60%;
+	top: 6%;
 }

@@ -39,13 +39,8 @@ public class TwitterTimelineAction extends Action{
 	@Override
 	public String perform(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		
-//		AccessToken accessToken = (AccessToken) session.getAttribute("accessToken");
-//		Twitter twitter = (Twitter) (session.getAttribute("twitterInstance"));
-//		
-//		twitter.setOAuthAccessToken(accessToken);
-		
 		Twitter twitter = (Twitter) (session.getAttribute("twitterInstance"));
+		
 		try {
 			// Get login user
             User user = twitter.showUser(twitter.getScreenName());

@@ -4,7 +4,7 @@
 
 <html>
 <head>
-	<title>Twitter page</title>
+	<title>Twitter Search Page</title>
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/twitter/twitter.css" rel="stylesheet" media="screen">

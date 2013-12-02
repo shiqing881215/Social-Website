@@ -1,0 +1,10 @@
+1. Twitter user profile text color cannot be white when the user doesn't have the the background image.
+2. Twitter @ and #
+
+
+
+
+
+
+improvement
+1. Embedded tweet

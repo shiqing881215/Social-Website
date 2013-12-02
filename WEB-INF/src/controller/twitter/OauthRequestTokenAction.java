@@ -3,13 +3,9 @@ package controller.twitter;
 import javax.servlet.http.HttpServletRequest;
 
 import model.Model;
-
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
 import twitter4j.auth.RequestToken;
-import twitter4j.conf.ConfigurationBuilder;
-
 import controller.Action;
 
 /**
@@ -42,13 +38,11 @@ public class OauthRequestTokenAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		try {
-			ConfigurationBuilder cb = new ConfigurationBuilder();
-			cb.setDebugEnabled(true)
-			  .setOAuthConsumerKey("xg1MDx9GCCRZZxTqmq2HA")
-			  .setOAuthConsumerSecret("wDDnowoQbjnhpiqzlyrEdV4otHJuvQJ15zwqrlvg");
-			
-			TwitterFactory tf = new TwitterFactory(cb.build());
-			Twitter twitter = tf.getInstance();
+			// Get Twitter single instance
+			Twitter twitter = TwitterUtil.getTwitterInstance();
+			if (twitter == null) {
+				return "error.jsp";
+			}
 			
 			// Set the callback url which will generate the access token
 			RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/BWeb/tw_OauthAccessToken.do");

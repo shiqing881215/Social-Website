@@ -4,7 +4,7 @@
 
 <html>
 <head>
-	<title>Twitter page</title>
+	<title>Twitter Timeline Page</title>
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/twitter/twitter.css" rel="stylesheet" media="screen">
@@ -26,6 +26,38 @@
 		            </form>
 		        </div>
 			</div>
+		</div>
+		
+		<!-- Tweet Button -->
+		<div class="tweet-button">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="sesedeqing">Tweet</a>
+			<script type="text/javascript">
+				twitterWidget(document, 'script', 'twitter-wjs');
+			</script>
+		</div>
+		
+		<!-- Follow Button -->
+		<div class="follow-button">
+			<a href="https://twitter.com/sesedeqing" class="twitter-follow-button" data-show-count="true">Follow Me On Twitter @sesedeqing</a>
+			<script type="text/javascript">
+				twitterWidget(document, 'script', 'twitter-wjs');
+			</script>
+		</div>
+		
+		<!-- Mention Button -->
+		<div class="mention-button">
+			<a href="https://twitter.com/intent/tweet?screen_name=sesedeqing" class="twitter-mention-button" data-related="sesedeqing">Tweet to @sesedeqing</a>
+			<script type="text/javascript">
+				twitterWidget(document, 'script', 'twitter-wjs');
+			</script>
+		</div>
+		
+		<!-- Hashtag Button -->	
+		<div class="hashtag-button">
+			<a href="https://twitter.com/intent/tweet?button_hashtag=SocialWebsiteRocks" class="twitter-hashtag-button" data-related="sesedeqing">Tweet #SocialWebsiteRocks</a>
+			<script type="text/javascript">
+				twitterWidget(document, 'script', 'twitter-wjs');
+			</script>
 		</div>
 		
 		<div class="login-user">
@@ -76,8 +108,11 @@
 						        <a class="account-group js-user-profile-link" href="https://twitter.com/${tweet.twitterUser.screenName}">
 						        	<span class="username js-action-profile-name">@${tweet.twitterUser.screenName}</span>
 						        </a>
-							    <p class="bio ">
-							        ${tweet.plainText}
+							    <p class="bio" id="${tweet.id}">
+							        <%-- ${tweet.plainText} --%>
+							        <script type="text/javascript">
+							        	parseTweetContent('${tweet.plainText}', '${tweet.id}');
+							        </script>
 							    </p>
 					        </div>
 					        
@@ -113,8 +148,11 @@
 						        <a class="account-group js-user-profile-link" href="https://twitter.com/${tweet.twitterUser.screenName}">
 						        	<span class="username js-action-profile-name">@${tweet.twitterUser.screenName}</span>
 						        </a>
-							    <p class="bio ">
-							        ${tweet.plainText}
+							    <p class="bio" id="${tweet.id}">
+							        <%-- ${tweet.plainText} --%>
+							        <script type="text/javascript">
+							        	parseTweetContent('${tweet.plainText}', '${tweet.id}');
+							        </script>
 							    </p>
 					        </div>
 					        

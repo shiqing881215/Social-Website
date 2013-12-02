@@ -3,6 +3,7 @@
 	<title>Welcome page</title>
 	<script type="text/javascript" src="ajax.js"></script>
 	<script type="text/javascript" src="search-suggest.js"></script>
+	<script type="text/javascript" src="js/tw/twitter.js"></script>
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	
@@ -49,8 +50,7 @@
 	        </div>
 	    </div>
     </div>
-	
-	
 
+	
 </body>
 </html>

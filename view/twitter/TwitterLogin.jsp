@@ -1,7 +1,7 @@
 <!-- This is the page for user login with twitter -->
 <html>
 <head>
-	<title>Twitter Login</title>
+	<title>Twitter Login Page</title>
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/additional.css" rel="stylesheet" media="screen">
