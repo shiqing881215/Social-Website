@@ -2,9 +2,31 @@
 .btn-labeled {padding-top: 0;padding-bottom: 0;}
 .input-group { margin-bottom:10px; }
 .separator { border-right: 1px solid #dfdfe0; }
+
+.social-button-size {
+	width:200px;
+}
+
 .facebook,.twitter { width:200px; }
-.facebook { background-color:#3399FF; }
+
+.facebook-color { 
+	background-color:#3b5998; 
+	background-image: none;
+}
 .twitter { background-color:#3399FF; }
 .facebook:hover,.twitter:hover { color:#fff; }
+
+.account-wall {
+	position: absolute;
+	top : 20%;
+	left : 35%;
+	height : 253px;
+	width : 400px;
+    padding: 30px 0px 40px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
 
     

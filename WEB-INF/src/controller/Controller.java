@@ -10,8 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Model;
+import controller.facebook.FacebookCheckLoginAction;
+import controller.facebook.FacebookLoginAction;
+import controller.facebook.FacebookProfileAction;
+import controller.facebook.FacebookSearchAction;
+import controller.googlePlus.GooglePlusCheckLoginAction;
+import controller.googlePlus.GooglePlusInitAction;
+import controller.googlePlus.GooglePlusProfileAction;
 import controller.twitter.OauthAccessTokenAction;
 import controller.twitter.OauthRequestTokenAction;
+import controller.twitter.TwitterCheckLoginAction;
 import controller.twitter.TwitterSearchAction;
 import controller.twitter.TwitterTimelineAction;
 import databean.User;
@@ -27,10 +35,21 @@ public class Controller extends HttpServlet{
 		Action.add(new LoginAction(model));
 		Action.add(new LogoutAction(model));
 		Action.add(new SearchAjaxAction(model));
+		
 		Action.add(new OauthAccessTokenAction(model));
 		Action.add(new OauthRequestTokenAction(model));
+		Action.add(new TwitterCheckLoginAction(model));
 		Action.add(new TwitterSearchAction(model));
 		Action.add(new TwitterTimelineAction(model));
+		
+		Action.add(new FacebookLoginAction(model));
+		Action.add(new FacebookCheckLoginAction(model));
+		Action.add(new FacebookSearchAction(model));
+		Action.add(new FacebookProfileAction(model));
+		
+		Action.add(new GooglePlusProfileAction(model));
+		Action.add(new GooglePlusCheckLoginAction(model));
+		Action.add(new GooglePlusInitAction(model));
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

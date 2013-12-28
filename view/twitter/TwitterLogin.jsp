@@ -10,16 +10,17 @@
 </head>
 
 	<body>
-		<div class="container" style="text-align: center;">
+		<div class="container account-wall" style="text-align: center;">
 			<h2 class="form-signin-heading">Sign in</h2>
 			<h4 class="text-muted">Connect with your twitter account</h4>
 			<br/>
 			<br/>
-			<img alt="twitter icon" src="https://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_bigger.png">
+			<img alt="twitter icon" src="/BWeb/img/Twitter.png" style="width: 73px;height: 73px;">
+			<!-- https://pbs.twimg.com/profile_images/2284174758/v65oai7fxn47qv9nectx_bigger.png -->
 			<div style="visibility: hidden;" id="requestToken">
 				<%= request.getAttribute("requestToken") %>
 			</div>
-			<button onclick="redirectForAuthenticate()" class="btn twitter btn-info">Login with twitter</button>
+			<button onclick="redirectForAuthenticate()" class="btn social-button-size btn-info">Login with twitter</button>
 		</div>
 	</body>
 </html>

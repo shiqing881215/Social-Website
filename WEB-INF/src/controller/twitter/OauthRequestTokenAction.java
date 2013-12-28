@@ -39,13 +39,13 @@ public class OauthRequestTokenAction extends Action {
 	public String perform(HttpServletRequest request) {
 		try {
 			// Get Twitter single instance
-			Twitter twitter = TwitterUtil.getTwitterInstance();
+			Twitter twitter = TwitterUtil.get().getTwitterInstance();
 			if (twitter == null) {
 				return "error.jsp";
 			}
 			
 			// Set the callback url which will generate the access token
-			RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/BWeb/tw_OauthAccessToken.do");
+			RequestToken requestToken = twitter.getOAuthRequestToken("http://localhost:8080/BWeb/tw_OauthAccessToken.do");
 			
 			System.out.println("Got request token.");
 	        System.out.println("Request token: " + requestToken.getToken());

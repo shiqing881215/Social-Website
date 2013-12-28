@@ -1,0 +1,9 @@
+.facebook-profile-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 35%;
+	top: 10%;
+	padding: 10px;
+	border-radius: 5px;
+}

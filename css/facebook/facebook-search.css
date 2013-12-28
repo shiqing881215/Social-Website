@@ -1,0 +1,18 @@
+.facebook-search-results-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 35%;
+	top: 13%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.facebook-widget {
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+	position: absolute;
+	left: 35%;
+	width: 410px;
+}

@@ -3,18 +3,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
-<head>
-	<title>Twitter Search Page</title>
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="css/twitter/twitter.css" rel="stylesheet" media="screen">
-	<link href="css/twitter/twitter-search.css" rel="stylesheet" media="screen">
-	<link href="css/twitter/twitter-timeline.css" rel="stylesheet" media="screen">
-	
-	<script src="js/tw/twitter.js"></script>
-</head>
+	<head>
+		<title>Twitter Search Page</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/twitter/twitter.css" rel="stylesheet" media="screen">
+		<link href="css/twitter/twitter-search.css" rel="stylesheet" media="screen">
+		<link href="css/twitter/twitter-timeline.css" rel="stylesheet" media="screen">
+		
+		<script src="js/tw/twitter.js"></script>
+	</head>
 
 	<body style="background-image: url('${loginTwitterUser.profileBackgroundImageURL}')">
+		<jsp:include page="../social/template-navigation.jsp" />
+	
 		<!-- Search Bar -->
 		<div class="container" style="text-align: center;">
 			<div class="row">

@@ -1,0 +1,17 @@
+.icon {
+	height: 64px;
+	width: 64px;
+	background-image: none;
+}
+
+.navigation-bar {
+	height: 256px;
+	width: 64px;
+	background-color: gray;
+	border-radius: 5px;
+	position: absolute;
+	left: 95%;
+	top: 20%;
+	padding: 5px;
+	border: 1px solid C0C0C0;
+}

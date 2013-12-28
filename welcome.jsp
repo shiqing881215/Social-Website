@@ -35,14 +35,14 @@
 	                <div class="panel-body">
 	                    <div class="row">
 	                        <div class="col-xs-6 col-sm-6 col-md-6 separator social-login-box"> <br />
-	                            <a href="http://www.jquery2dotnet.com" class="btn facebook btn-primary" role="button">Facebook</a>
+	                            <a href="fb_CheckLogin.do" class="btn facebook-color btn-primary social-button-size" role="button">Facebook</a>
 	                            <br />
 	                            <br />
-	                            <form action="tw_OauthRequestToken.do" method="POST">
-	                            	<input class="btn twitter btn-info" type="submit" name="action" value="Twitter" />
+	                            <form action="tw_CheckLogin.do" method="POST">
+	                            	<input class="btn btn-info social-button-size" style="width: 225px;" type="submit" name="action" value="Twitter" />
 	                            </form>
-	                            
-	                            <a href="Twitter.jsp" class="btn twitter btn-info" role="button">Twitter</a>
+	                            <!-- <a href="view/facebook/FacebookLogin2.jsp"> facebook </a>  -->
+	                            <a href="view/googlePlus/GooglePlusLogin.jsp" class="btn facebook-color btn-primary social-button-size" role="button">Google+</a>
 	                        </div>
 	                    </div>
 	                </div>

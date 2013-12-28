@@ -52,7 +52,7 @@ public class Tweet {
 	public Tweet(Status status, Twitter twitter) {
 		this.createdDate = status.getCreatedAt();
 		this.id = status.getId();
-		this.plainText = status.getText();
+		this.plainText = refrainPlainText(status.getText());
 		this.source = status.getSource();
 		TwitterUser twUser = checkRetweet(this.plainText,twitter);
 		if (twUser == null) {
@@ -89,5 +89,15 @@ public class Tweet {
 	 */
 	private String getRetweetTweet(String tweetPlainText) {
 		return tweetPlainText.substring(tweetPlainText.indexOf(":")+1);
+	}
+	
+	/**
+	 * Deal with the ' and /n in the plain text, so parseTweetContent method in the twitter.js
+	 * can get the proper parameter
+	 * @param plainText
+	 * @return
+	 */
+	private String refrainPlainText(String plainText) {
+		return plainText.replace("\'", "\\'").replace("\n", "\\n");
 	}
 }
