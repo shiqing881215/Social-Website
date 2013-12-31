@@ -45,5 +45,6 @@
 	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/jdo-api-3.0.jar"/>
 	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/jackson-mapper-asl-1.9.8.jar"/>
 	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/joda-time-2.3.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

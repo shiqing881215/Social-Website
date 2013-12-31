@@ -49,3 +49,16 @@ Reference : https://developers.facebook.com/docs/facebook-login/login-flow-for-w
 For Facebook app set up tips:
 Site URL : http://localhost:8080/BWeb
 Disable sandbox mode, or you can set specific test users under Settings/Develop Roles
+
+
+
+
+
+Google+
+
+Login Process
+1. On the welcome page, have a google+ button link to GooglePlusLogin.jsp
+2. In the GooglePlusLogin.jsp follow the instruction here to construct the page
+   https://developers.google.com/+/web/signin/add-button
+   The only change is adding an ajax call to GooglePlusInitAction to init the plus instance with the access token
+   and set the callback as a redirect to profile action

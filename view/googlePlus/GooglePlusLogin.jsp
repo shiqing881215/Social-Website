@@ -15,8 +15,7 @@
 		    	// Hide the sign-in button now that the user is authorized, for example:
 		    	document.getElementById('signinButton').setAttribute('style', 'display: none');
 		    	console.log("Token:" + authResult.access_token);
-/*  		    	window.location = ("http://localhost:8080/BWeb/gp_GooglePlusProfile.do&aceess_token=" + authResult.access_token);
- *//*  		    	window.location = ("http://localhost:8080/BWeb/gp_GooglePlusProfile.do"); */
+		    	// Ajax call to the Init action to init the plus client, then go to the profile action
  				$.ajax({
  					type : "GET",
  					url : "http://localhost:8080/BWeb/gp_GooglePlusInit.do",

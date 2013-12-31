@@ -1,0 +1,30 @@
+.social-btn-container {
+	/* background-color: white;
+	width: 300px; */
+	position: absolute;
+	left: 45%;
+	top: 28%;
+	/* padding: 10px;
+	border-radius: 5px; */
+}
+
+.search-container {
+	position: absolute;
+	left: 43%;
+	top: 18%;
+}
+
+.welcome-title {
+	position: absolute;
+	left: 35%;
+	text-align: center;
+}
+
+body { 
+  background: url("http://localhost:8080/BWeb/img/welcome-page/background-blue.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+

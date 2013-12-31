@@ -1,0 +1,19 @@
+.google-profile-container {
+	background-color: white;
+	width: 300px;
+	position: absolute;
+	left: 25%;
+	top: 10%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.google-widget-container {
+	background-color: white;
+	width: 310px;
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	padding: 10px;
+	border-radius: 5px;
+}
