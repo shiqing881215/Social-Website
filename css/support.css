@@ -1,0 +1,29 @@
+.photo-container {
+	position: absolute;
+	top : 20%;
+	left : 30%;
+}
+
+.info-container {
+	position: absolute;
+	top : 20%;
+	left : 50%;
+}
+
+.photo {
+	height: 200px;
+	widows: 200px;
+	border-radius: 5px;
+}
+
+.header {
+	position: absolute;
+	top : 8%;
+	left : 30%;
+}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}

@@ -3,7 +3,7 @@
 	width: 300px;
 	position: absolute;
 	left: 25%;
-	top: 10%;
+	top: 14%;
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -31,7 +31,7 @@
 	width: 400px;
 	position: absolute;
 	left: 50%;
-	top: 10%;
+	top: 14%;
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -57,23 +57,23 @@
 .tweet-button {
 	position: absolute;
 	left: 28%;
-	top: 6%;
+	top: 10%;
 }
 
 .follow-button {
 	position: absolute;
 	left: 34%;
-	top: 6%;
+	top: 10%;
 }
 
 .mention-button {
 	position: absolute;
 	left: 49%;
-	top: 6%;
+	top: 10%;
 }
 
 .hashtag-button {
 	position: absolute;
 	left: 60%;
-	top: 6%;
+	top: 10%;
 }

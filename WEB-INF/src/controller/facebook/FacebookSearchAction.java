@@ -11,6 +11,7 @@ import com.restfb.FacebookClient;
 import com.restfb.Parameter;
 import com.restfb.types.User;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 import databean.FacebookUser;
 
@@ -30,7 +31,7 @@ public class FacebookSearchAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		FacebookClient facebookClient = (FacebookClient) request.getSession().getAttribute("facebookClient");
+		FacebookClient facebookClient = (FacebookClient) request.getSession().getAttribute(SessionUserAttribute.FACEBOOK_USER.getValue());
 		String query = request.getParameter("facebookUser");
 		// The result of this search call just contains the id of user, so we need to do another api call to fetch the object
 		Connection<User> fbUsers = 

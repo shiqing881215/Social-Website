@@ -45,8 +45,8 @@ public class LoginForm extends FormBean{
 	// This kind of error more like plain text check (which can be also done by Javascript)
 	public List<String> getValidationErrors() {
 		List<String> errors = new ArrayList<String>();
-		if (userName == null || userName.length() == 0) errors.add("userName is required.");
-		if (password == null || password.length() == 0) errors.add("password is required.");
+		if (userName == null || userName.length() == 0) errors.add("Username is required.");
+		if (password == null || password.length() == 0) errors.add("Password is required.");
 		if (action == null) errors.add("button is required.");
 		if (errors.size() > 0) return errors;
 		

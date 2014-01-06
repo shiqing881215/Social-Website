@@ -11,12 +11,15 @@
 		<link href="css/twitter/twitter-search.css" rel="stylesheet" media="screen">
 		<link href="css/twitter/twitter-timeline.css" rel="stylesheet" media="screen">
 		<link href="css/facebook/facebook-search.css" rel="stylesheet" media="screen">
+		<link href="css/social/social.css" rel="stylesheet" media="screen">
+		<link href="css/social/welcome-page.css" rel="stylesheet" media="screen">
 		
 		<script src="js/fb/facebook.js"></script>
 	</head>
 
-	<body style="background-color: #3b5998;">
+	<body>
 		<jsp:include page="../social/template-navigation.jsp" />
+		<jsp:include page="../template-header.jsp" />
 	
 		<div id="fb-root"></div>
 		<script>debugger;
@@ -24,7 +27,7 @@
 		</script>
 		
 		<!-- Search Bar -->
-		<div class="container" style="text-align: center;">
+		<div class="container search-bar-container" style="text-align: center;">
 			<div class="row">
 		        <div class="span12">
 		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="fb_FacebookSearch.do" method="get">
@@ -39,14 +42,17 @@
 		</div>
 		
 		<!-- Facebook Widget  -->
-		<div class="fb-like facebook-widget" 
-		 data-href="https://www.facebook.com/qing.shi.10" 
-		 data-layout="standard" 
-		 data-action="like" 
-		 data-show-faces="true" 
-		 data-share="true"
-		 style="text-align: center;">
-		</div>
+	 	<div class="search-facebook-widget">
+		 	<div class="fb-like" 
+			 data-href="https://www.facebook.com/qing.shi.10" 
+			 data-layout="standard" 
+			 data-action="like" 
+			 data-show-faces="true" 
+			 data-share="true"
+			 style="text-align: center;">
+			</div>
+	 	</div>
+		
 		
 		<!-- Search Results -->
 		<div class="facebook-search-results-container">

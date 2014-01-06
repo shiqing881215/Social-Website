@@ -6,6 +6,7 @@ import model.Model;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -30,7 +31,7 @@ public class TwitterCheckLoginAction extends Action {
 	 * Otherwise go to the login page.
 	 */
 	public String perform(HttpServletRequest request) {
-		Twitter twitter = (Twitter)(request.getSession().getAttribute("twitterInstance"));
+		Twitter twitter = (Twitter)(request.getSession().getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
 		if (twitter != null) {
 			try {
 				if (twitter.getOAuthAccessToken() != null) {

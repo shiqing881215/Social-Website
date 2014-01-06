@@ -5,14 +5,17 @@
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/additional.css" rel="stylesheet" media="screen">
-	
+	<link href="css/social/welcome-page.css" rel="stylesheet" media="screen">
+	<link href="css/social/login-page.css" rel="stylesheet" media="screen">
+		
 	<script src="js/tw/twitter.js"></script>
 </head>
 
 	<body>
-		<div class="container account-wall" style="text-align: center;">
+		<jsp:include page="../template-header.jsp" />
+		<div class="container account-wall login-panel">
 			<h2 class="form-signin-heading">Sign in</h2>
-			<h4 class="text-muted">Connect with your twitter account</h4>
+			<h4 class="text-muted">Connect with your Twitter account</h4>
 			<br/>
 			<br/>
 			<img alt="twitter icon" src="/BWeb/img/Twitter.png" style="width: 73px;height: 73px;">

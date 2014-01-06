@@ -13,6 +13,7 @@ import com.restfb.FacebookClient;
 import com.restfb.FacebookClient.AccessToken;
 import com.restfb.WebRequestor;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -42,7 +43,7 @@ public class FacebookLoginAction extends Action {
 			String accessToken = token.getAccessToken();
 			
 			FacebookClient facebookClient = new DefaultFacebookClient(accessToken);
-	        request.getSession().setAttribute("facebookClient", facebookClient);
+	        request.getSession().setAttribute(SessionUserAttribute.FACEBOOK_USER.getValue(), facebookClient);
 
 			return "fb_FacebookProfile.do";
 		} catch (IOException e) {

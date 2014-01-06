@@ -10,14 +10,17 @@
 		<link href="css/twitter/twitter.css" rel="stylesheet" media="screen">
 		<link href="css/twitter/twitter-search.css" rel="stylesheet" media="screen">
 		<link href="css/twitter/twitter-timeline.css" rel="stylesheet" media="screen">
+		<link href="css/social/social.css" rel="stylesheet" media="screen">
+		<link href="css/social/welcome-page.css" rel="stylesheet" media="screen">
 		
 		<script src="js/tw/twitter.js"></script>
 	</head>
 
-	<body style="background-image: url('${loginTwitterUser.profileBackgroundImageURL}')">
+	<body>
 		<jsp:include page="../social/template-navigation.jsp" />
+		<jsp:include page="../template-header.jsp" />
 	
-		<div class="container" style="text-align: center;">
+		<div class="container search-bar-container">
 			<div class="row">
 		        <div class="span12">
 		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="tw_TwitterSearch.do" method="get">

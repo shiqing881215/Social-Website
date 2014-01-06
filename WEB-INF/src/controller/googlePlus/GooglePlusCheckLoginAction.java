@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import model.Model;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -25,8 +26,11 @@ public class GooglePlusCheckLoginAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		if ((request.getSession().getAttribute(SessionUserAttribute.GOOGLE_USER.getValue())) != null) {
+			return "gp_GooglePlusProfile.do"; 
+		} else {
+			return "view/googlePlus/GooglePlusLogin.jsp";
+		}
 	}
 
 }

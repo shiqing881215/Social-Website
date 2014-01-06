@@ -8,6 +8,7 @@ import twitter4j.auth.AccessToken;
 
 import model.Model;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -47,7 +48,7 @@ public class OauthAccessTokenAction extends Action {
 		
 		try {
 			// Get the single twitter instance from session
-			Twitter twitter = (Twitter) (request.getSession().getAttribute("twitterInstance"));
+			Twitter twitter = (Twitter) (request.getSession().getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
 			
 			AccessToken accessToken = twitter.getOAuthAccessToken(oauth_verifier);
 			
@@ -58,7 +59,7 @@ public class OauthAccessTokenAction extends Action {
 //	        request.getSession().setAttribute("accessToken", accessToken);
 	        
 	        twitter.setOAuthAccessToken(accessToken);
-	        request.getSession().setAttribute("twitterInstance", twitter);
+	        request.getSession().setAttribute(SessionUserAttribute.TWITTER_USER.getValue(), twitter);
 	        
 	        return "tw_TwitterTimeline.do"; 
 	        

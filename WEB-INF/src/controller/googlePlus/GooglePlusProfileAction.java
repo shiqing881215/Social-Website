@@ -8,6 +8,7 @@ import com.googlecode.googleplus.Plus;
 import com.googlecode.googleplus.model.person.Person;
 import com.googlecode.googleplus.model.person.PersonImage;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -28,7 +29,7 @@ public class GooglePlusProfileAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		Plus plus = (Plus) request.getSession().getAttribute("GooglePlusClient");
+		Plus plus = (Plus) request.getSession().getAttribute(SessionUserAttribute.GOOGLE_USER.getValue());
 //		ActivityFeed activities = plus.getActivityOperations().list("me");
 		Person mePerson = plus.getPeopleOperations().get("me");
 		mePerson.setImage(getResizedPersonImage(mePerson,IMAGE_SIZE));

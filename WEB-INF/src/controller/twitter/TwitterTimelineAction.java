@@ -12,6 +12,7 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.User;
 //import twitter4j.auth.AccessToken;
+import configuration.SessionUserAttribute;
 import controller.Action;
 import databean.Tweet;
 import databean.TwitterUser;
@@ -39,7 +40,7 @@ public class TwitterTimelineAction extends Action{
 	@Override
 	public String perform(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		Twitter twitter = (Twitter) (session.getAttribute("twitterInstance"));
+		Twitter twitter = (Twitter) (session.getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
 		
 		try {
 			// Get login user

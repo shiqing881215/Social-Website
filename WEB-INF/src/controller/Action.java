@@ -5,6 +5,13 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Base class for all other action controller.
+ * Maintain a single map here to forward the request to the right action controller.
+ * 
+ * @author shiqing
+ *
+ */
 public abstract class Action {
 	public abstract String getActionName();
 	// Return the name of the jsp used to render the output or the .do to redirect

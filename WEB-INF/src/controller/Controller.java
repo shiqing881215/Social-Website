@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Model;
+import configuration.SessionUserAttribute;
 import controller.facebook.FacebookCheckLoginAction;
 import controller.facebook.FacebookLoginAction;
 import controller.facebook.FacebookProfileAction;
@@ -25,10 +26,19 @@ import controller.twitter.TwitterSearchAction;
 import controller.twitter.TwitterTimelineAction;
 import databean.User;
 
+/**
+ * Class handle http calls.
+ * Map request to the right action.
+ * Forward the response to right view.
+ * 
+ * @author shiqing
+ *
+ */
 public class Controller extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
+	// Each time when you add new action. remember to add the new action into the action map in this method
 	public void init() throws ServletException{
 		// Init model, which means getting the connection with db
 		Model model = new Model(getServletConfig());
@@ -67,7 +77,7 @@ public class Controller extends HttpServlet{
 	private String performTheAction(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String servletPath = request.getServletPath();
-		User user = (User)session.getAttribute("user");
+		User user = (User)session.getAttribute(SessionUserAttribute.SOCIAL_PLUS_USER.getValue());
 		String action = getActionName(servletPath);
 		
 		if (user == null) {

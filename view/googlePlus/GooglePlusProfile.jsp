@@ -11,14 +11,17 @@
 		<link href="css/twitter/twitter-search.css" rel="stylesheet" media="screen">
 		<link href="css/twitter/twitter-timeline.css" rel="stylesheet" media="screen">
 		<link href="css/google/google-profile.css" rel="stylesheet" media="screen">
+		<link href="css/social/social.css" rel="stylesheet" media="screen">
+		<link href="css/social/welcome-page.css" rel="stylesheet" media="screen">
 	
 		<script src="js/fb/facebook.js"></script>
 	</head>
-	<body style="background-color: #d34836;">
+	<body>
 		<jsp:include page="../social/template-navigation.jsp" />
+		<jsp:include page="../template-header.jsp" />
 		
 		<!-- Search Bar -->
-		<div class="container" style="text-align: center;">
+		<div class="container search-bar-container" style="text-align: center;">
 			<div class="row">
 		        <div class="span12">
 		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="gp_GooglePlusSearch.do" method="get">
@@ -58,7 +61,7 @@
 		</div>
 		
 		<div class="google-widget-container">
-			<h5> You can follow me on Google+ here. </h5>
+			<h5> You can follow me on <span style="color: #d34836;">Google+</span> here. </h5>
 			<!-- Place this tag where you want the widget to render. -->
 			<div class="g-person" data-width="297" data-href="//plus.google.com/116216522361915002333" data-rel="author"></div>
 			

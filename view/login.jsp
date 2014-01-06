@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+<%@page import="java.util.List" %>
 <html>
 	<head>
-		<title>Bootstrap 101 Template</title>
+		<title>Login</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/social/welcome-page.css" rel="stylesheet" media="screen">
+		<link href="/BWeb/css/login.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
 		<div class="container">
@@ -12,22 +14,36 @@
 		        <div class="span12">
 		    		<div class="" id="loginModal">
 		              <div class="modal-header">
-		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">¡Á</button>
 		                <h3>Have an Account?</h3>
 		              </div>
 		              <div class="modal-body">
 		                <div class="well">
 		                  <ul class="nav nav-tabs">
 		                    <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-		                    <li><a href="#create" data-toggle="tab">Create Account</a></li>
+		                    <!-- <li><a href="#create" data-toggle="tab">Create Account</a></li> -->
 		                  </ul>
 		                  <div id="myTabContent" class="tab-content">
 		                    <div class="tab-pane active in" id="login">
 		                      <form class="form-horizontal" action='login.do' method="POST">
 		                        <fieldset>
 		                          <div id="legend">
-		                            <legend class="">Login</legend>
-		                          </div>    
+		                            <legend class="">Login or Register</legend>
+		                          </div> 
+		                          
+		                          <%
+								      List<String> errors = (List<String>)request.getAttribute("errors");
+									  if (errors != null && errors.size() != 0) {
+								  %>
+								  <div class="alert alert-error">
+								  <%=errors.get(0) %>
+								  </div>
+									  <%-- <h3 style="color: red;"> <%=errors.get(0) %> </h3> 
+									  <br/> --%>
+								  <% 
+									  } 
+								  %>
+		                          
+		                             
 		                          <div class="control-group">
 		                            <!-- Username -->
 		                            <label class="control-label"  for="username">Username</label>

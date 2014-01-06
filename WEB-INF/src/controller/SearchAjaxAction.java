@@ -12,6 +12,12 @@ import org.mybeans.form.FormBeanFactory;
 import databean.User;
 import formbean.SearchForm;
 
+/**
+ * Search ajax action for ajax username match.
+ * 
+ * @author shiqing
+ *
+ */
 public class SearchAjaxAction extends Action {
 	private FormBeanFactory<SearchForm> formBeanFactory = FormBeanFactory.getInstance(SearchForm.class);
 	

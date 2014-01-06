@@ -11,8 +11,9 @@
 </head>
 
 <body>
+	<jsp:include page="template-header.jsp" />
 	<div class="welcome-title">
-		<h2> Hello <%= request.getParameter("userName") %></h2>
+		<h2> Hello ${sessionScope.user.userName} </h2>
 		<h2> Welcome to Social Website</h2>
 	</div>
 	

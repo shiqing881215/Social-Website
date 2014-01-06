@@ -8,6 +8,7 @@ import model.Model;
 import com.googlecode.googleplus.GooglePlusFactory;
 import com.googlecode.googleplus.Plus;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -27,9 +28,10 @@ public class GooglePlusInitAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
+		// TODO move hard code
 		GooglePlusFactory factory = new GooglePlusFactory(
-				"clientId", 
-				"clientSecret");
+				"217653803775-8hkvkhcamc51l39vk08bu4nbck8pqj7d.apps.googleusercontent.com", 
+				"mI772KngfiZquJ9-sqhLUUn0");
 		// the refreshListener is notified in case a new access token is obtained after the old one expires
 		String accessToken = request.getParameter("access_token");
 		System.out.println(accessToken);
@@ -37,7 +39,7 @@ public class GooglePlusInitAction extends Action {
 		Plus plus = factory.getApi(accessToken, null, null);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("GooglePlusClient", plus);
+		session.setAttribute(SessionUserAttribute.GOOGLE_USER.getValue(), plus);
 		
 		// This is the response for ajax callback function. 
 		// For this, we don't need any response, here is to init the google+ instance with access token

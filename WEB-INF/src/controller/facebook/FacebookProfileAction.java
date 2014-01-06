@@ -11,6 +11,7 @@ import com.restfb.FacebookClient;
 import com.restfb.types.Post;
 import com.restfb.types.User;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 import databean.FacebookUser;
 
@@ -31,7 +32,7 @@ public class FacebookProfileAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		FacebookClient facebookClient = (FacebookClient) request.getSession().getAttribute("facebookClient");
+		FacebookClient facebookClient = (FacebookClient) request.getSession().getAttribute(SessionUserAttribute.FACEBOOK_USER.getValue());
 
 		// Get login user, user's friends, user's profile feed wall
 		User loginUser = facebookClient.fetchObject("me", User.class);

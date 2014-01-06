@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import model.Model;
 
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -28,7 +29,7 @@ public class FacebookCheckLoginAction extends Action {
 	 * Otherwise go to the login page.
 	 */
 	public String perform(HttpServletRequest request) {
-		if ((request.getSession().getAttribute("facebookClient")) != null) {
+		if ((request.getSession().getAttribute(SessionUserAttribute.FACEBOOK_USER.getValue())) != null) {
 			return "fb_FacebookProfile.do"; 
 		} else {
 			return "view/facebook/FacebookLogin.jsp";

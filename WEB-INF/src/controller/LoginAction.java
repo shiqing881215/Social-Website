@@ -9,13 +9,24 @@ import javax.servlet.http.HttpSession;
 import model.Model;
 import model.UserDAO;
 
+import org.genericdao.DuplicateKeyException;
 import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
+import configuration.SessionUserAttribute;
+
 import databean.User;
 import formbean.LoginForm;
 
+/**
+ * Login action to check whether user already login.
+ * Also handle the register action.
+ * Entry point for all other actions.
+ * 
+ * @author shiqing
+ *
+ */
 public class LoginAction extends Action {
 	private FormBeanFactory<LoginForm> formBeanFactory = FormBeanFactory.getInstance(LoginForm.class);
 	private UserDAO userDAO;
@@ -36,8 +47,8 @@ public class LoginAction extends Action {
 		HttpSession session = request.getSession();
 		
 		// User already login
-		if (session.getAttribute("user") != null) {
-			return "welcome.jsp";  // return to welcome.do jsp
+		if (session.getAttribute(SessionUserAttribute.SOCIAL_PLUS_USER.getValue()) != null) {
+			return "/view/welcome.jsp";  // return to welcome.do jsp
 		}
 		
 		List<String> errors = new ArrayList<String>();
@@ -49,12 +60,12 @@ public class LoginAction extends Action {
 			
 			// First time the login form is initialized
 			if (!loginForm.isPresent()) {
-				return "login.jsp";
+				return "/view/login.jsp";
 			}
 			
 			errors.addAll(loginForm.getValidationErrors());
 			if (errors.size() > 0) {
-				return "login.jsp";
+				return "/view/login.jsp";
 			}
 			
 			// Register button
@@ -63,8 +74,8 @@ public class LoginAction extends Action {
 				user.setUserName(loginForm.getUserName());
 				user.setPassword(loginForm.getPassword());
 				userDAO.create(user);
-				session.setAttribute("user", user);
-				return "welcome.jsp";
+				session.setAttribute(SessionUserAttribute.SOCIAL_PLUS_USER.getValue(), user);
+				return "/view/welcome.jsp";
 			}
 			
 			// Login button
@@ -72,20 +83,24 @@ public class LoginAction extends Action {
 			
 			if (user == null) {
 				errors.add("User not found.");
-				return "login.jsp";
+				return "/view/login.jsp";
 			} else if (!user.getPassword().equals(loginForm.getPassword())) {
 				errors.add("Invalid password.");
-				return "login.jsp";
+				return "/view/login.jsp";
 			} else {
-				session.setAttribute("user", user);
-				return "welcome.jsp";
+				session.setAttribute(SessionUserAttribute.SOCIAL_PLUS_USER.getValue(), user);
+				return "/view/welcome.jsp";
 			}
 		} catch (RollbackException e) {
-			errors.add(e.getMessage());
-			return "login.jsp";
+			if (e instanceof DuplicateKeyException) {
+				errors.add("User already exist");
+			} else {
+				errors.add(e.getMessage());
+			}
+			return "/view/login.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
-			return "login.jsp";
+			return "/view/error.jsp";
 		}
 	}
 }

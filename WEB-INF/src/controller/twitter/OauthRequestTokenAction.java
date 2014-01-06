@@ -6,6 +6,7 @@ import model.Model;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.auth.RequestToken;
+import configuration.SessionUserAttribute;
 import controller.Action;
 
 /**
@@ -58,7 +59,7 @@ public class OauthRequestTokenAction extends Action {
 	        // Attention, store the twitter instance in the session, which will be used by the following twitter calls
 	        // like get access token, do twitter api calls. 
 	        // It is needed use the single instance, otherwise it will give the no token available exception.
-	        request.getSession().setAttribute("twitterInstance", twitter);
+	        request.getSession().setAttribute(SessionUserAttribute.TWITTER_USER.getValue(), twitter);
 	        
 	        return "view/twitter/TwitterLogin.jsp";
 		} catch (TwitterException e) {

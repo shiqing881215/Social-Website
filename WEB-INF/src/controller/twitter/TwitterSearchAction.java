@@ -13,6 +13,7 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.User;
 //import twitter4j.auth.AccessToken;
+import configuration.SessionUserAttribute;
 import controller.Action;
 import databean.TwitterUser;
 
@@ -47,7 +48,7 @@ public class TwitterSearchAction extends Action {
 //		
 //		twitter.setOAuthAccessToken(accessToken);
 		
-		Twitter twitter = (Twitter) (session.getAttribute("twitterInstance"));
+		Twitter twitter = (Twitter) (session.getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
 		
 		try {
 			// Do user search stuff
