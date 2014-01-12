@@ -18,5 +18,9 @@
 	<img class="icon" alt="Google+" src="/BWeb/img/social-navigation-icon/Google-Plus-icon.png">
 </a>
 <br/>
+<a href="/BWeb/instagram_CheckLogin.do">
+	<img class="icon" alt="Instagram" src="/BWeb/img/social-navigation-icon/Instagram-icon.png">
+</a>
+<br/>
 
 </div>

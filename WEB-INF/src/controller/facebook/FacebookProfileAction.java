@@ -34,20 +34,24 @@ public class FacebookProfileAction extends Action {
 	public String perform(HttpServletRequest request) {
 		FacebookClient facebookClient = (FacebookClient) request.getSession().getAttribute(SessionUserAttribute.FACEBOOK_USER.getValue());
 
-		// Get login user, user's friends, user's profile feed wall
-		User loginUser = facebookClient.fetchObject("me", User.class);
-		Connection<User> friends = facebookClient.fetchConnection("me/friends", User.class);
-		Connection<Post> feeds = facebookClient.fetchConnection("me/feed", Post.class);
-		
-		// Get friends information
-		List<FacebookUser> myFriends = FacebookUtil.get().fetchUserInfoFromIds(facebookClient, friends, FacebookUtil.PROFILE_FRIENDS);
-		
-		// Set attribute in the request
-		request.setAttribute("loginUser", loginUser);
-		request.setAttribute("myFriends", myFriends);
-		request.setAttribute("myFeeds", feeds.getData());
-		
-		return "view/facebook/FacebookProfile.jsp";
+		if (facebookClient != null) {
+			// Get login user, user's friends, user's profile feed wall
+			User loginUser = facebookClient.fetchObject("me", User.class);
+			Connection<User> friends = facebookClient.fetchConnection("me/friends", User.class);
+			Connection<Post> feeds = facebookClient.fetchConnection("me/feed", Post.class);
+			
+			// Get friends information
+			List<FacebookUser> myFriends = FacebookUtil.get().fetchUserInfoFromIds(facebookClient, friends, FacebookUtil.PROFILE_FRIENDS);
+			
+			// Set attribute in the request
+			request.setAttribute("loginUser", loginUser);
+			request.setAttribute("myFriends", myFriends);
+			request.setAttribute("myFeeds", feeds.getData());
+			
+			return "view/facebook/FacebookProfile.jsp";
+		} else {
+			return "view/facebook/FacebookLogin.jsp";
+		}
 	}
 	
 	public String getYear(String fullTime) {

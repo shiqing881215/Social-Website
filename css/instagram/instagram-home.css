@@ -1,0 +1,31 @@
+.feed-photo {
+	height: 498px;
+	width: 498px;
+}
+
+.profile-photo {
+	height: 50px;
+	width: 50px;
+}
+
+.feeds-container {
+	background-color: #D8D8D8;
+	width: 540px;
+	position: absolute;
+	left: 35%;
+	top: 10%;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.profile-container {
+	background-color: #D8D8D8;
+	width: 150px;
+	position: absolute;
+	left: 20%;
+	top: 10%;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+}

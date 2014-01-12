@@ -34,8 +34,6 @@ public class GooglePlusInitAction extends Action {
 				"mI772KngfiZquJ9-sqhLUUn0");
 		// the refreshListener is notified in case a new access token is obtained after the old one expires
 		String accessToken = request.getParameter("access_token");
-		System.out.println(accessToken);
-		
 		Plus plus = factory.getApi(accessToken, null, null);
 		
 		HttpSession session = request.getSession();

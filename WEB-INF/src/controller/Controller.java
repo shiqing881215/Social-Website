@@ -19,6 +19,9 @@ import controller.googlePlus.GooglePlusCheckLoginAction;
 import controller.googlePlus.GooglePlusInitAction;
 import controller.googlePlus.GooglePlusProfileAction;
 import controller.googlePlus.GooglePlusSearchAction;
+import controller.instagram.InstagramCheckLoginAction;
+import controller.instagram.InstagramHomeAction;
+import controller.instagram.InstagramInitAction;
 import controller.twitter.OauthAccessTokenAction;
 import controller.twitter.OauthRequestTokenAction;
 import controller.twitter.TwitterCheckLoginAction;
@@ -62,6 +65,10 @@ public class Controller extends HttpServlet{
 		Action.add(new GooglePlusCheckLoginAction(model));
 		Action.add(new GooglePlusInitAction(model));
 		Action.add(new GooglePlusSearchAction(model));
+		
+		Action.add(new InstagramInitAction(model));
+		Action.add(new InstagramHomeAction(model));
+		Action.add(new InstagramCheckLoginAction(model));
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

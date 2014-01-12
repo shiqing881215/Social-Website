@@ -11,7 +11,6 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.User;
-//import twitter4j.auth.AccessToken;
 import configuration.SessionUserAttribute;
 import controller.Action;
 import databean.Tweet;
@@ -41,6 +40,10 @@ public class TwitterTimelineAction extends Action{
 	public String perform(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		Twitter twitter = (Twitter) (session.getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
+		
+		if (twitter == null) {
+			return "/view/twitter/TwittrLogin.jsp";
+		}
 		
 		try {
 			// Get login user

@@ -42,13 +42,11 @@ public class TwitterSearchAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		
-//		AccessToken accessToken = (AccessToken) session.getAttribute("accessToken");
-//		Twitter twitter = (Twitter) (session.getAttribute("twitterInstance"));
-//		
-//		twitter.setOAuthAccessToken(accessToken);
-		
 		Twitter twitter = (Twitter) (session.getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
+		
+		if (twitter == null) {
+			return "/view/twitter/TwittrLogin.jsp";
+		}
 		
 		try {
 			// Do user search stuff

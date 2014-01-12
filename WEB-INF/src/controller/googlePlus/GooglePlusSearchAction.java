@@ -27,9 +27,13 @@ public class GooglePlusSearchAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		Plus plus = (Plus) request.getSession().getAttribute(SessionUserAttribute.GOOGLE_USER.getValue());
-		String query = request.getParameter("googlePlusUser");
-		// TODO : Unrecognized field "etag" Exception, because can not map the field etag in the response json
-		plus.getPeopleOperations().search(query);
-		return null;
+		if (plus != null) {
+			String query = request.getParameter("googlePlusUser");
+			// TODO : Unrecognized field "etag" Exception, because can not map the field etag in the response json
+			plus.getPeopleOperations().search(query);
+			return null;
+		} else {
+			return "/view/googlePlus/GooglePlusLogin.jsp";
+		}
 	}
 }

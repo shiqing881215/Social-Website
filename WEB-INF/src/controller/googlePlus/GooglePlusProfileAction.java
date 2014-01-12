@@ -30,19 +30,15 @@ public class GooglePlusProfileAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		Plus plus = (Plus) request.getSession().getAttribute(SessionUserAttribute.GOOGLE_USER.getValue());
-//		ActivityFeed activities = plus.getActivityOperations().list("me");
-		Person mePerson = plus.getPeopleOperations().get("me");
-		mePerson.setImage(getResizedPersonImage(mePerson,IMAGE_SIZE));
-		
-		
-		System.out.println("ID:\t" + mePerson.getId());
-		System.out.println("Display Name:\t" + mePerson.getDisplayName());
-		System.out.println("Image URL:\t" + mePerson.getImage().getUrl());
-		System.out.println("Profile URL:\t" + mePerson.getUrl());
-		
-		request.setAttribute("GoogleLoginUser", mePerson);
-		
-		return "/view/googlePlus/GooglePlusProfile.jsp";
+		if (plus != null) {
+			Person mePerson = plus.getPeopleOperations().get("me");
+			mePerson.setImage(getResizedPersonImage(mePerson,IMAGE_SIZE));
+			
+			request.setAttribute("GoogleLoginUser", mePerson);
+			return "/view/googlePlus/GooglePlusProfile.jsp";
+		} else {
+			return "/view/googlePlus/GooglePlusLogin.jsp";
+		}
 	}
 
 	/**

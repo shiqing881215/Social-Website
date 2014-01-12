@@ -50,18 +50,21 @@ public class OauthAccessTokenAction extends Action {
 			// Get the single twitter instance from session
 			Twitter twitter = (Twitter) (request.getSession().getAttribute(SessionUserAttribute.TWITTER_USER.getValue()));
 			
-			AccessToken accessToken = twitter.getOAuthAccessToken(oauth_verifier);
-			
-			System.out.println("Got access token.");
-	        System.out.println("Access token: " + accessToken.getToken());
-	        System.out.println("Access token secret: " + accessToken.getTokenSecret());
-	        
-//	        request.getSession().setAttribute("accessToken", accessToken);
-	        
-	        twitter.setOAuthAccessToken(accessToken);
-	        request.getSession().setAttribute(SessionUserAttribute.TWITTER_USER.getValue(), twitter);
-	        
-	        return "tw_TwitterTimeline.do"; 
+			if (twitter != null) {
+				AccessToken accessToken = twitter.getOAuthAccessToken(oauth_verifier);
+				
+				// TODO log
+				System.out.println("Got access token.");
+		        System.out.println("Access token: " + accessToken.getToken());
+		        System.out.println("Access token secret: " + accessToken.getTokenSecret());
+		        
+		        twitter.setOAuthAccessToken(accessToken);
+		        request.getSession().setAttribute(SessionUserAttribute.TWITTER_USER.getValue(), twitter);
+		        
+		        return "tw_TwitterTimeline.do"; 
+			} else {
+				return "/view/twitter/TwittrLogin.jsp";
+			}
 	        
 		} catch (TwitterException e) {
 			e.printStackTrace();

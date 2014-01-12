@@ -19,6 +19,11 @@
 	background-image: none;
 }
 
+.instagram-color {
+	background-color:#517fa4; 
+	background-image: none;
+}
+
 .twitter { background-color:#3399FF; }
 .facebook:hover,.twitter:hover { color:#fff; }
 

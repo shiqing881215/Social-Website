@@ -32,13 +32,17 @@ public class FacebookSearchAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		FacebookClient facebookClient = (FacebookClient) request.getSession().getAttribute(SessionUserAttribute.FACEBOOK_USER.getValue());
-		String query = request.getParameter("facebookUser");
-		// The result of this search call just contains the id of user, so we need to do another api call to fetch the object
-		Connection<User> fbUsers = 
-				facebookClient.fetchConnection("search", User.class, Parameter.with("q", query), Parameter.with("type", "user"));
-		List<FacebookUser> users = FacebookUtil.get().fetchUserInfoFromIds(facebookClient, fbUsers, FacebookUtil.SEARCH_SIZE);
-        request.setAttribute("fbUserSearchList", users);
-        
-		return "view/facebook/FacebookSearch.jsp";
+		if (facebookClient != null) {
+			String query = request.getParameter("facebookUser");
+			// The result of this search call just contains the id of user, so we need to do another api call to fetch the object
+			Connection<User> fbUsers = 
+					facebookClient.fetchConnection("search", User.class, Parameter.with("q", query), Parameter.with("type", "user"));
+			List<FacebookUser> users = FacebookUtil.get().fetchUserInfoFromIds(facebookClient, fbUsers, FacebookUtil.SEARCH_SIZE);
+	        request.setAttribute("fbUserSearchList", users);
+	        
+			return "view/facebook/FacebookSearch.jsp"; 
+		} else {
+			return "view/facebook/FacebookLogin.jsp";
+		}
 	}
 }
