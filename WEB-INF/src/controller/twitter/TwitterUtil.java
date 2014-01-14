@@ -9,6 +9,7 @@ import twitter4j.conf.ConfigurationBuilder;
 /**
  * Twitter Stuff Util Class
  * Singleton pattern, only one twitter util instance
+ * 
  * @author shiqing
  *
  */

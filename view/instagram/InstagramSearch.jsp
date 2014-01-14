@@ -4,7 +4,7 @@
 
 <html>
 	<head>
-		<title>Facebook Search Page</title>
+		<title>Instagram Search Page</title>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/twitter/twitter.css" rel="stylesheet" media="screen">
@@ -13,6 +13,7 @@
 		<link href="css/facebook/facebook-search.css" rel="stylesheet" media="screen">
 		<link href="css/social/social.css" rel="stylesheet" media="screen">
 		<link href="css/social/welcome-page.css" rel="stylesheet" media="screen">
+		<link href="css/instagram/instagram-search.css" rel="stylesheet" media="screen">
 		
 		<script src="js/fb/facebook.js"></script>
 	</head>
@@ -21,61 +22,37 @@
 		<jsp:include page="../social/template-navigation.jsp" />
 		<jsp:include page="../template-header.jsp" />
 	
-		<div id="fb-root"></div>
-		<script>debugger;
-		(facebookWidget(document, 'script', 'facebook-jssdk'));
-		</script>
-		
 		<!-- Search Bar -->
 		<div class="container search-bar-container" style="text-align: center;">
 			<div class="row">
 		        <div class="span12">
-		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="fb_FacebookSearch.do" method="get">
+		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="ins_InstagramSearch.do" method="get">
 		                <div class="input-append span12">
-		                    <input type="text" class="search-query search-bar" placeholder="Search" name="facebookUser">
+		                    <input type="text" class="search-query search-bar" placeholder="Search" name="instagramUser">
 		                    <button type="submit" class="btn"><i class="icon-search"></i></button>
 		                </div>
 		            </form>
 		        </div>
 			</div>
-			<span style="color: white;">Go to </span> <a href="fb_FacebookProfile.do">profile</a>
+			<span style="color: white;">Go to </span> <a href="ins_InstagramHome.do">home</a>
 		</div>
 		
-		<!-- Facebook Widget  -->
-	 	<div class="search-facebook-widget">
-		 	<div class="fb-like" 
-			 data-href="https://www.facebook.com/qing.shi.10" 
-			 data-layout="standard" 
-			 data-action="like" 
-			 data-show-faces="true" 
-			 data-share="true"
-			 style="text-align: center;">
-			</div>
-	 	</div>
-		
-		
 		<!-- Search Results -->
-		<div class="facebook-search-results-container">
+		<div class="ins-search-results-container">
 			<div class="stream-container stream search-stream">
 				<ul class="stream-items js-navigable-stream" style="margin: 0; padding: 0; ">
-				<c:forEach var="fbUser" items="${fbUserSearchList}">
+				<c:forEach var="insUser" items="${insUserSearchList}">
 					<li class="js-stream-item stream-item stream-item single-user-result" style="list-style-type: none;">
  						<div >
  							<div class="left">
-	 							<a class="account-group js-user-profile-link" href="${fbUser.link}">
-						            <img class="avatar js-action-profile-avatar " src="http://graph.facebook.com/${fbUser.username}/picture" alt="profileImage" data-user-id="${fbUser.username}">
+	 							<a class="account-group js-user-profile-link" href="http://instagram.com/${insUser.userName}">
+						            <img class="avatar js-action-profile-avatar ins-search-profile-photo" src="${insUser.profilePictureURI}" alt="profileImage" data-user-id="${insUser.userName}">
 						        </a>
  							</div>
 					        <div class="right">
-						        <a class="account-group js-user-profile-link" href="${fbUser.link}">
-						        	<strong class="fullname js-action-profile-name">${fbUser.firstName} ${fbUser.lastName}</strong>
+						        <a class="account-group js-user-profile-link" href="http://instagram.com/${insUser.userName}">
+						        	<strong class="fullname js-action-profile-name">${insUser.fullName}</strong>
 						        </a>
-						        <a class="account-group js-user-profile-link" href="${fbUser.link}">
-						        	<span class="username js-action-profile-name">@${fbUser.username}</span>
-						        </a>
-							    <%-- <p class="bio ">
-							        ${fbUser.about}
-							    </p> --%>
 					        </div>
 						</div>
 					</li>

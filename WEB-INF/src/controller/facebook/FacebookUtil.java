@@ -14,7 +14,8 @@ import Util.BaseUtil;
 /**
  * Facebook Stuff Util Class
  * Singleton pattern, only one facebook util instance
- *@author shiqing
+ * 
+ * @author shiqing
  *
  */
 public class FacebookUtil extends BaseUtil{

@@ -1,0 +1,14 @@
+.ins-search-results-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 35%;
+	top: 16%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.ins-search-profile-photo {
+	height: 50px;
+	width: 50px;
+}

@@ -48,6 +48,7 @@ public class OauthRequestTokenAction extends Action {
 			// Set the callback url which will generate the access token
 			RequestToken requestToken = twitter.getOAuthRequestToken("http://localhost:8080/BWeb/tw_OauthAccessToken.do");
 			
+			// TODO log
 			System.out.println("Got request token.");
 	        System.out.println("Request token: " + requestToken.getToken());
 	        System.out.println("Request token secret: " + requestToken.getTokenSecret());

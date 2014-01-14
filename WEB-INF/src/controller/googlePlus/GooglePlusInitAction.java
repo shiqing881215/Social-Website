@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 
 import model.Model;
 
-import com.googlecode.googleplus.GooglePlusFactory;
 import com.googlecode.googleplus.Plus;
 
 import configuration.SessionUserAttribute;
@@ -28,13 +27,7 @@ public class GooglePlusInitAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO move hard code
-		GooglePlusFactory factory = new GooglePlusFactory(
-				"217653803775-8hkvkhcamc51l39vk08bu4nbck8pqj7d.apps.googleusercontent.com", 
-				"mI772KngfiZquJ9-sqhLUUn0");
-		// the refreshListener is notified in case a new access token is obtained after the old one expires
-		String accessToken = request.getParameter("access_token");
-		Plus plus = factory.getApi(accessToken, null, null);
+		Plus plus = GoogleUtil.get().getGooglePlusInstance(request);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute(SessionUserAttribute.GOOGLE_USER.getValue(), plus);
