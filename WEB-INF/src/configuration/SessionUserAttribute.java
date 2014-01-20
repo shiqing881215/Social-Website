@@ -11,7 +11,8 @@ public enum SessionUserAttribute {
 	TWITTER_USER("twitterInstance"),
 	FACEBOOK_USER("facebookClient"),
 	GOOGLE_USER("GooglePlusClient"),
-	INSTAGRAM_USER("instagramClient");
+	INSTAGRAM_USER("instagramClient"),
+	LINKEDIN_USRE("linkedinClient");
 	
 	private String value;
 	

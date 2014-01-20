@@ -24,6 +24,11 @@
 	background-image: none;
 }
 
+.linkedin-color {
+	background-color:#007bb6; 
+	background-image: none;
+}
+
 .twitter { background-color:#3399FF; }
 .facebook:hover,.twitter:hover { color:#fff; }
 

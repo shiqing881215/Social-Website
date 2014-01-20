@@ -45,6 +45,9 @@
 	                            <br />
 	                            <br />
 	                            <a href="instagram_CheckLogin.do" class="btn instagram-color btn-primary social-button-size" role="button">Instagram</a>
+	                            <br />
+	                            <br />
+	                            <a href="linkedin_CheckLogin.do" class="btn instagram-color btn-primary social-button-size" role="button">LinkedIn</a>
 	                        </div>
 	                    </div>
 	                </div>

@@ -11,6 +11,7 @@
 	</head>
 	
 	<body>
+		<jsp:include page="../template-header.jsp" />
 		<div class="container account-wall login-panel">
 			<h2 class="form-signin-heading">Sign in</h2>
 			<h4 class="text-muted">Connect with your Instagram account</h4>

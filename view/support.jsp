@@ -22,6 +22,7 @@
 				<small><cite title="San Francisco, USA">San Francisco, USA </cite></small>
 			</a>
             <p>
+            	<!-- TODO  Use ROT13 to wrap email -->
                 <a href="mailto:shiqing881215@gmail.com">Email Me</a> 
                 <br />
                 <a href="">www.shiqing.com</a>

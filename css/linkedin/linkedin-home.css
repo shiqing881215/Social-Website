@@ -1,0 +1,39 @@
+.linkedin-connection-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 35%;
+	top: 12%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.linkedin-profile-container {
+	background-color: white;
+	width: 150px;
+	position: absolute;
+	left: 20%;
+	top: 12%;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.connection-photo {
+	height: 60px;
+	width: 60px;
+}
+
+.single-connection-result {
+	border-bottom: solid F8F8F8;
+	padding: 5px;
+	min-height: 60px;
+}
+
+.single-connection-left {
+	float: left;
+}
+
+.single-connection-right {
+	padding-left: 70px;
+}

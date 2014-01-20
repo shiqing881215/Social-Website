@@ -23,6 +23,9 @@ import controller.instagram.InstagramCheckLoginAction;
 import controller.instagram.InstagramHomeAction;
 import controller.instagram.InstagramInitAction;
 import controller.instagram.InstagramSearchAction;
+import controller.linkedin.LinkedInCheckLoginAction;
+import controller.linkedin.LinkedInHomeAction;
+import controller.linkedin.LinkedInInitAction;
 import controller.twitter.OauthAccessTokenAction;
 import controller.twitter.OauthRequestTokenAction;
 import controller.twitter.TwitterCheckLoginAction;
@@ -71,6 +74,10 @@ public class Controller extends HttpServlet{
 		Action.add(new InstagramHomeAction(model));
 		Action.add(new InstagramCheckLoginAction(model));
 		Action.add(new InstagramSearchAction(model));
+		
+		Action.add(new LinkedInCheckLoginAction(model));
+		Action.add(new LinkedInInitAction(model));
+		Action.add(new LinkedInHomeAction(model));
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

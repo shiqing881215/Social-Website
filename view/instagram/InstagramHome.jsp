@@ -45,6 +45,13 @@
 			<br/>
 		</div>
 		
+		<!-- Widget -->
+		<div class="widget-container">
+			<a href="http://instagram.com/shiqing881215?ref=badge" class="ig-b- ig-b-v-24">
+				<img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" />
+			</a>
+		</div>
+		
 		<!-- Feeds List -->
 		<div class="feeds-container">
 			<c:forEach var="feed" items="${feedsList}">
