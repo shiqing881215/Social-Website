@@ -12,7 +12,11 @@ public class UrlGenerator {
 	private static final String LINKEDIN_CURRENT_USER = "/v1/people/~:(first-name,last-name,headline,picture-url,public-profile-url)";
 	private static final String LINKEDIN_CURRENT_USER_CONNECTION = "/v1/people/~/connections";
 	private static final String LINKEDIN_OAUTH2_PARAM = "?oauth2_access_token=";
-
+	
+	private static final String FOURSQUARE_BASE_API_URL = "https://api.foursquare.com/v2";
+	private static final String FOURSQUARE_OAUTH_PARAM = "?oauth_token=%s";
+	private static final String FOURSQUARE_OAUTH_URL ="https://foursquare.com/oauth2/access_token?client_id=%s&client_secret=%s&grant_type=authorization_code&redirect_uri=%s&code=%s";
+	private static final String FOURSQUARE_USER_PROFILE = "/users/%s";
 	/**
 	 * https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code
      *                                      &code=AUTHORIZATION_CODE
@@ -63,5 +67,27 @@ public class UrlGenerator {
 		sb.append(LINKEDIN_OAUTH2_PARAM);
 		sb.append(accessToken);
 		return sb.toString();
+	}
+	
+	/**
+	 * https://foursquare.com/oauth2/access_token?client_id=%s&client_secret=%s&grant_type=authorization_code&redirect_uri=%s&code=%s
+	 * @param clientId
+	 * @param clientSecret
+	 * @param redirectUri
+	 * @param code
+	 * @return
+	 */
+	public static String getFourSquareOauthAccessTokenUrl(String clientId, String clientSecret, String redirectUri, String code) {
+		return String.format(FOURSQUARE_OAUTH_URL, clientId, clientSecret, redirectUri, code);
+	}
+	
+	/**
+	 * https://api.foursquare.com/v2/users/USER_ID?oauth_token=ACCESS_TOKEN
+	 * @param userId
+	 * @param accessToken
+	 * @return
+	 */
+	public static String getFourSquareUserProfileUrl(String userId, String accessToken) {
+		return String.format(FOURSQUARE_BASE_API_URL+FOURSQUARE_USER_PROFILE+FOURSQUARE_OAUTH_PARAM, userId, accessToken);
 	}
 }

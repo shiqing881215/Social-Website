@@ -1,0 +1,22 @@
+.foursquare-profile-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 35%;
+	top: 12%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.friend-photo {
+	width: 60px;
+	height: 60px;
+}
+
+.single-friend-left {
+	float: left;
+}
+
+.single-friend-right {
+	padding-left: 70px;
+}

@@ -12,7 +12,8 @@ public enum SessionUserAttribute {
 	FACEBOOK_USER("facebookClient"),
 	GOOGLE_USER("GooglePlusClient"),
 	INSTAGRAM_USER("instagramClient"),
-	LINKEDIN_USRE("linkedinClient");
+	LINKEDIN_USRE("linkedinClient"),
+	FOURSQUARE_USER("fourSquareClient");
 	
 	private String value;
 	

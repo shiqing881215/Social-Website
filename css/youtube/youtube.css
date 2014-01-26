@@ -1,0 +1,30 @@
+.youtube-search-container {
+	position: absolute;
+	left: 20%;
+	top: 14%;
+	width: 800px;
+ 	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.youtube-image {
+	width: 185px;
+	height: 139px;
+	max-width: none;
+}
+
+.youtube-title {
+	font-size: medium;
+	line-height: normal;
+	width: 400px;
+	padding: 5px;
+}
+ 
+ .youtube-description {
+ 	font-size: medium;
+	line-height: normal;
+	width: 400px;
+	padding: 5px;
+	float : left;
+ }

@@ -7,7 +7,6 @@ import com.restfb.Connection;
 import com.restfb.FacebookClient;
 import com.restfb.types.User;
 
-import controller.twitter.TwitterUtil;
 import databean.FacebookUser;
 import Util.BaseUtil;
 
@@ -36,7 +35,7 @@ public class FacebookUtil extends BaseUtil{
 		if (facebookUtil == null) {
 			// If two threads run at the same time
 			// http://en.wikipedia.org/wiki/Singleton_pattern#Example
-			synchronized (TwitterUtil.class) {
+			synchronized (FacebookUtil.class) {
 				if (facebookUtil == null) {
 					facebookUtil = new FacebookUtil();
 				}

@@ -15,6 +15,10 @@ import controller.facebook.FacebookCheckLoginAction;
 import controller.facebook.FacebookLoginAction;
 import controller.facebook.FacebookProfileAction;
 import controller.facebook.FacebookSearchAction;
+import controller.foursquare.FourSquareCheckLoginAction;
+import controller.foursquare.FourSquareHomeAction;
+import controller.foursquare.FourSquareInitAction;
+import controller.foursquare.FourSquareSearchAction;
 import controller.googlePlus.GooglePlusCheckLoginAction;
 import controller.googlePlus.GooglePlusInitAction;
 import controller.googlePlus.GooglePlusProfileAction;
@@ -78,6 +82,11 @@ public class Controller extends HttpServlet{
 		Action.add(new LinkedInCheckLoginAction(model));
 		Action.add(new LinkedInInitAction(model));
 		Action.add(new LinkedInHomeAction(model));
+		
+		Action.add(new FourSquareCheckLoginAction(model));
+		Action.add(new FourSquareInitAction(model));
+		Action.add(new FourSquareHomeAction(model));
+		Action.add(new FourSquareSearchAction(model));
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

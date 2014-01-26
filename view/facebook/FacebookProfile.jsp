@@ -1,4 +1,4 @@
-<!-- This is the page for user interact with twitter -->
+<!-- This is the page for facebook login user -->
 <%@page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 

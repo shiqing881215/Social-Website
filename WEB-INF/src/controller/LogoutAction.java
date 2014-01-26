@@ -3,9 +3,9 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import configuration.SessionUserAttribute;
-
 import model.Model;
+
+import configuration.SessionUserAttribute;
 
 /**
  * Logout action to reset all user info in session to null and back to login page.

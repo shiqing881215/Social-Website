@@ -40,6 +40,9 @@
 	                            <form action="tw_CheckLogin.do" method="POST">
 	                            	<input class="btn btn-info social-button-size" style="width: 225px;" type="submit" name="action" value="Twitter" />
 	                            </form>
+	                            <a href="linkedin_CheckLogin.do" class="btn instagram-color btn-primary social-button-size" role="button">LinkedIn</a>
+	                            <br />
+	                            <br />
 	                            <!-- <a href="view/facebook/FacebookLogin2.jsp"> facebook </a>  -->
 	                            <a href="gp_CheckLogin.do" class="btn google-color btn-primary social-button-size" role="button">Google+</a>
 	                            <br />
@@ -47,7 +50,10 @@
 	                            <a href="instagram_CheckLogin.do" class="btn instagram-color btn-primary social-button-size" role="button">Instagram</a>
 	                            <br />
 	                            <br />
-	                            <a href="linkedin_CheckLogin.do" class="btn instagram-color btn-primary social-button-size" role="button">LinkedIn</a>
+	                            <a href="fs_CheckLogin.do" class="btn foursquare-color btn-primary social-button-size" role="button">FourSquare</a>
+	                        	<br />
+	                            <br />
+	                            <a href="view/youtube/YouTube.jsp" class="btn youtube-color btn-primary social-button-size" role="button">YouTube</a>
 	                        </div>
 	                    </div>
 	                </div>

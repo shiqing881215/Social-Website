@@ -29,6 +29,16 @@
 	background-image: none;
 }
 
+.foursquare-color {
+	background-color:#0072b1; 
+	background-image: none;
+}
+
+.youtube-color {
+	background-color:#bb0000; 
+	background-image: none;
+}
+
 .twitter { background-color:#3399FF; }
 .facebook:hover,.twitter:hover { color:#fff; }
 

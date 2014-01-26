@@ -1,5 +1,24 @@
 README
 
+Support Social Network:
+Twitter 
+Facebook 
+Google+ 
+LinkedIn 
+Instagram 
+FourSquare
+
+To be support:
+Tumblr
+Flickr
+Pinrest
+Klout
+Blogger
+YouTube
+Evernote
+DropBox
+Chinese Social Network 
+
 
 
 Twitter
