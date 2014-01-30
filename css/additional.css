@@ -39,6 +39,11 @@
 	background-image: none;
 }
 
+.tumblr-color {
+	background-color:#32506d; 
+	background-image: none;
+}
+
 .twitter { background-color:#3399FF; }
 .facebook:hover,.twitter:hover { color:#fff; }
 

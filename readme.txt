@@ -7,14 +7,14 @@ Google+
 LinkedIn 
 Instagram 
 FourSquare
+YouTube
+Tumblr
 
 To be support:
-Tumblr
 Flickr
 Pinrest
 Klout
 Blogger
-YouTube
 Evernote
 DropBox
 Chinese Social Network 

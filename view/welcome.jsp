@@ -54,6 +54,9 @@
 	                        	<br />
 	                            <br />
 	                            <a href="view/youtube/YouTube.jsp" class="btn youtube-color btn-primary social-button-size" role="button">YouTube</a>
+	                            <br />
+	                            <br />
+	                            <a href="tb_CheckLogin.do" class="btn tumblr-color btn-primary social-button-size" role="button">Tumblr</a>
 	                        </div>
 	                    </div>
 	                </div>

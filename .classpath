@@ -54,5 +54,7 @@
 	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/linkedin-j.jar"/>
 	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/json-20090211.jar"/>
 	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/foursquare-api-1.0.2.jar" sourcepath="/Users/shiqing/Documents/foursquare/foursquare-api-1.0.2-sources"/>
+	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/jumblr-0.0.6-jar-with-dependencies.jar" sourcepath="/Users/shiqing/Documents/tumblr/jumblr-master/src"/>
+	<classpathentry kind="lib" path="/Users/shiqing/Documents/workspace_jee/BWeb/WEB-INF/lib/scribe-1.3.0.jar" sourcepath="/Users/shiqing/Documents/Scribe/scribe-java-master"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
