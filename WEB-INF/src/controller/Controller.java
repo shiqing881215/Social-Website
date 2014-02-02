@@ -31,6 +31,7 @@ import controller.linkedin.LinkedInCheckLoginAction;
 import controller.linkedin.LinkedInHomeAction;
 import controller.linkedin.LinkedInInitAction;
 import controller.tumblr.TumblrCheckLoginAction;
+import controller.tumblr.TumblrDashboardAction;
 import controller.tumblr.TumblrInitAction;
 import controller.tumblr.TumblrRequestTokenAction;
 import controller.twitter.OauthAccessTokenAction;
@@ -94,6 +95,7 @@ public class Controller extends HttpServlet{
 		Action.add(new TumblrCheckLoginAction(model));
 		Action.add(new TumblrRequestTokenAction(model));
 		Action.add(new TumblrInitAction(model));
+		Action.add(new TumblrDashboardAction(model));
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

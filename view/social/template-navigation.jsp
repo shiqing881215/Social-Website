@@ -30,5 +30,9 @@
 	<img class="icon" alt="YouTube" src="/BWeb/img/social-navigation-icon/Youtube-icon.png">
 </a>
 <br/>
+<a href="/BWeb/tb_CheckLogin.do">
+	<img class="icon" alt="Tumblr" src="/BWeb/img/social-navigation-icon/Tumblr-icon.png">
+</a>
+<br/>
 
 </div>

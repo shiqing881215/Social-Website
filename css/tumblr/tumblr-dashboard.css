@@ -1,0 +1,19 @@
+.tumblr-text-posts-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 15%;
+	top: 12%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.tumblr-photo-posts-container {
+	background-color: white;
+	width: 400px;
+	position: absolute;
+	left: 50%;
+	top: 12%;
+	padding: 10px;
+	border-radius: 5px;
+}
