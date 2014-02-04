@@ -23,9 +23,9 @@
 		<div class="container search-bar-container">
 			<div class="row">
 		        <div class="span12">
-		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="fs_FourSquareSearch.do" method="get">
+		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="tb_TumblrSearch.do" method="get">
 		                <div class="input-append span12">
-		                    <input type="text" class="search-query search-bar" placeholder="Search" name="fourSquareUser">
+		                    <input type="text" class="search-query search-bar" placeholder="Search" name="tumblrUser">
 		                    <button type="submit" class="btn"><i class="icon-search"></i></button>
 		                </div>
 		            </form>
@@ -65,14 +65,9 @@
 					<li class="js-stream-item stream-item stream-item single-user-result" style="list-style-type: none;">
  						<div >
  							${photoPost.caption}
- 						
  							<a href="${photoPost.postUrl}" target="blank">
  								<img alt="photo" src="${photoPost.photos[0].sizes[0].url}">
  							</a>
- 							
-							<%-- <b> ${textPost.title} </b>
-							<br/>
-							${textPost.body} --%>
 			    			<br/>
 			    			${photoPost.dateGMT}
 			    			<br/>

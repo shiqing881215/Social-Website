@@ -34,6 +34,7 @@ import controller.tumblr.TumblrCheckLoginAction;
 import controller.tumblr.TumblrDashboardAction;
 import controller.tumblr.TumblrInitAction;
 import controller.tumblr.TumblrRequestTokenAction;
+import controller.tumblr.TumblrSearchAction;
 import controller.twitter.OauthAccessTokenAction;
 import controller.twitter.OauthRequestTokenAction;
 import controller.twitter.TwitterCheckLoginAction;
@@ -96,6 +97,7 @@ public class Controller extends HttpServlet{
 		Action.add(new TumblrRequestTokenAction(model));
 		Action.add(new TumblrInitAction(model));
 		Action.add(new TumblrDashboardAction(model));
+		Action.add(new TumblrSearchAction(model));
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
