@@ -1,6 +1,9 @@
 <!-- This is the page for facebook login user -->
 <%@page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- Add these two lines to allow Chinese character to show on the page -->
+<%@page contentType = "text/html; charset=GBK"%>
+<% request.setCharacterEncoding ("GBK");%>
 
 <html>
 	<head>
@@ -139,20 +142,15 @@
 			<h4> Your Feeds </h4>
 			<div class="stream-container stream search-stream">
 				<ul class="stream-items js-navigable-stream" style="margin: 0; padding: 0; ">
-				<c:forEach var="post" items="${myFeeds}">
+				<c:forEach var="feed" items="${myFeeds}">
 					<li class="js-stream-item stream-item stream-item single-user-result" style="list-style-type: none;">
  						<div >
-					        From 
-					        <a	href="https://www.facebook.com/${post.from.id}">
-					        	${post.from.name}
-					        </a>
-					        To 
-					        <a	href="https://www.facebook.com/${post.to[0].id}">
-					        	${post.to[0].name}
+					        <a	href="https://www.facebook.com/${feed.fromId}">
+					        	${feed.fromName}
 					        </a>
 					        <br/>
-					        <a href="${post.actions[0].link}">
-					        	${post.message}
+					        <a href="${feed.link}">
+					        	${feed.message}
 					        </a>
 						</div>
 					</li>
@@ -160,6 +158,25 @@
 				</ul>
 			</div>
 			<!-- End of Feeds List -->
+			
+			<!-- Tagged Photo -->
+			<h4> Photos you are tagged </h4>
+			<div class="stream-container stream search-stream">
+				<ul class="stream-items js-navigable-stream" style="margin: 0; padding: 0; ">
+				<c:forEach var="tagPhoto" items="${myTagPhotos}">
+					<li class="js-stream-item stream-item stream-item single-user-result" style="list-style-type: none;">
+ 						<div >
+ 							${tagPhoto.name} from <a href="https://www.facebook.com/${tagPhoto.from.id}"> ${tagPhoto.from.name} </a>
+ 							<br/>
+					        <a href="${tagPhoto.link}">
+					            <img alt="tagPhoto" src="${tagPhoto.source}"/>
+					        </a>
+						</div>
+					</li>
+				</c:forEach> 
+				</ul>
+			</div>
+			<!-- End of Tagged Photo -->
 		</div>
 	</body>
 </html>

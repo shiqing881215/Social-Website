@@ -4,7 +4,7 @@
  */
 function redirectForAuthenticate() {
 	window.location = ("https://www.facebook.com/dialog/oauth?client_id=665302103496806&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FBWeb%2Ffb_Login.do&" +
-			"scope=email%2Cpublish_stream%2Cemail%2Crsvp_event%2Cread_stream%2Cuser_likes%2Cuser_birthday");
+			"scope=email%2Cpublish_stream%2Cemail%2Crsvp_event%2Cread_stream%2Cuser_likes%2Cuser_birthday%20user_photos%20friends_photos");
 }
 
 function facebookWidget(d, s, id) {
