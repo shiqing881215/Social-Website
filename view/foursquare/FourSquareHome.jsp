@@ -1,6 +1,9 @@
 <!-- This is the page for foursquare login user -->
 <%@page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- Add these two lines to allow Chinese character to show on the page -->
+<%@page contentType = "text/html; charset=GBK"%>
+<% request.setCharacterEncoding ("GBK");%>
 
 <html>
 	<head>

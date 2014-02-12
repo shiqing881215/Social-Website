@@ -22,7 +22,7 @@
 		<div class="container search-bar-container" style="text-align: center;">
 			<div class="row">
 		        <div class="span12">
-		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="ins_InstagramSearch.do" method="get">
+		            <form id="twitter-user-search" class="form-search form-horizontal pull-right" action="linkedin_LinkedInSearch.do" method="get">
 		                <div class="input-append span12">
 		                    <input type="text" class="search-query search-bar" placeholder="Search" name="instagramUser">
 		                    <button type="submit" class="btn"><i class="icon-search"></i></button>

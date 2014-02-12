@@ -38,6 +38,13 @@
 			<div class="stream-container stream search-stream">
 				<ul class="stream-items js-navigable-stream" style="margin: 0; padding: 0; ">
 				<h4> Text Posts </h4>
+				<%
+					if (((List)(request.getAttribute("textPosts"))).size() == 0) {
+				%>
+					<b>You don't have any text post right now.</b>
+				<% 
+					}
+				%>
 				<c:forEach var="textPost" items="${textPosts}">
 					<li class="js-stream-item stream-item stream-item single-user-result" style="list-style-type: none;">
  						<div >

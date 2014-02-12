@@ -38,13 +38,18 @@ public class TumblrSearchAction extends Action {
 		}
 		
 		String query = request.getParameter("tumblrUser");
-		Blog blog = tumblrClient.blogInfo(query);
-		String avater = tumblrClient.blogAvatar(query);
-		List<Post> likes = tumblrClient.blogLikes(query);
-		List<Post> posts = tumblrClient.blogPosts(query);
-		
-		TumblrSearchUser user = new TumblrSearchUser(blog, avater, likes, posts);
-		request.setAttribute("user", user);
+		try {
+			Blog blog = tumblrClient.blogInfo(query);
+			String avater = tumblrClient.blogAvatar(query);
+			List<Post> likes = tumblrClient.blogLikes(query);
+			List<Post> posts = tumblrClient.blogPosts(query);
+			
+			TumblrSearchUser user = new TumblrSearchUser(blog, avater, likes, posts);
+			request.setAttribute("user", user);
+		} catch (Exception e) {
+			// TODO log
+			request.setAttribute("tumblrUser", query);
+		}
 		
 		return "/view/tumblr/TumblrSearch.jsp";
 	}

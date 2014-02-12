@@ -41,9 +41,21 @@
 		<div class="foursquare-search-results-container">
 			<div class="stream-container stream search-stream">
 				<ul class="stream-items js-navigable-stream" style="margin: 0; padding: 0; ">
+					<%
+						if (request.getAttribute("user") == null) {
+					%> 
+						<b>
+						No user found for id : ${tumblrUser}. 
+						<br/>
+						Please try another search for exact user id.
+						</b>
+					<% 
+						} else {
+					%>
+				
 					<!-- User Info -->
 					<div>
-						<h4> User Infor</h4>
+						<h4> User Info</h4>
 						<div class="single-friend-left">
 							<a class="account-group js-user-profile-link" href="http://${user.blog.name}.tumblr.com">
 				            <img class="avatar js-action-profile-avatar friend-photo" src="${user.avater}" alt="profileImage" data-user-id="${user.blog.name}">
@@ -152,6 +164,10 @@
 							</li>
 						</c:forEach>
 					<!-- End of Posts -->
+					
+					<%
+						}
+					%>
 				</ul>
 			</div>
 		</div>
