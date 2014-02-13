@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import model.Model;
 
 import com.googlecode.googleplus.Plus;
-//import com.googlecode.googleplus.model.person.PersonFeed;
+import com.googlecode.googleplus.model.activity.ActivityFeed;
 
 import configuration.SessionUserAttribute;
 import controller.Action;
@@ -25,13 +25,20 @@ public class GooglePlusSearchAction extends Action {
 	}
 
 	@Override
+	/**
+	 * This is the activity search action
+	 */
 	public String perform(HttpServletRequest request) {
 		Plus plus = (Plus) request.getSession().getAttribute(SessionUserAttribute.GOOGLE_USER.getValue());
 		if (plus != null) {
 			String query = request.getParameter("googlePlusUser");
 			// TODO : Unrecognized field "etag" Exception, because can not map the field etag in the response json
-			plus.getPeopleOperations().search(query);
-			return null;
+//			PeopleOperations peopleOperations = plus.getPeopleOperations().search(query);
+			
+			ActivityFeed activityFeed = plus.getActivityOperations().search(query, null);
+			request.setAttribute("activities", activityFeed.getItems());
+			
+			return "/view/googlePlus/GooglePlusSearch.jsp";
 		} else {
 			return "/view/googlePlus/GooglePlusLogin.jsp";
 		}
