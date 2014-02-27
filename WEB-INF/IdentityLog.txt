@@ -1,0 +1,2 @@
+INFO - User login sq at Thu Feb 27 00:29:19 PST 2014
+INFO - User logout sq at Thu Feb 27 00:29:21 PST 2014

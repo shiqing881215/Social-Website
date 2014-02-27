@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,13 +10,15 @@ import javax.servlet.http.HttpSession;
 import model.Model;
 import model.UserDAO;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.genericdao.DuplicateKeyException;
 import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
+import configuration.LoggingUtil;
 import configuration.SessionUserAttribute;
-
 import databean.User;
 import formbean.LoginForm;
 
@@ -30,9 +33,12 @@ import formbean.LoginForm;
 public class LoginAction extends Action {
 	private FormBeanFactory<LoginForm> formBeanFactory = FormBeanFactory.getInstance(LoginForm.class);
 	private UserDAO userDAO;
+	private static Logger logger = Logger.getLogger(LoginAction.class);
 	
 	// Init userDAO from model
 	public LoginAction(Model model) {
+		// Init log4j
+		DOMConfigurator.configure(LoggingUtil.get().getLoggingXml());
 		userDAO = model.getUserDAO();
 	}
 	
@@ -88,6 +94,7 @@ public class LoginAction extends Action {
 				errors.add("Invalid password.");
 				return "/view/login.jsp";
 			} else {
+				logger.info("User login " + user.getUserName() + " at " + new Date());
 				session.setAttribute(SessionUserAttribute.SOCIAL_PLUS_USER.getValue(), user);
 				return "/view/welcome.jsp";
 			}
